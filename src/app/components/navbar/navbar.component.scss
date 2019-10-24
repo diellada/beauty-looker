@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+$pink: #E56399;
+$tumbleweed: #D3A588;
+$deep-taupe: #7A6563;
+$pearl-aqua: #7FD1B9;
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 2px solid black;
+  background-color: $pearl-aqua;
+
+  h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: $tumbleweed;
+    text-shadow: gray;
+
+    span {
+      font-family: 'Segoe UI Symbol';
+      font-size: 20px;
+      color: black;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    width: 60%;
+    
+    input.search-bar {
+      height: 70%;
+      width: 30%;
+      border-radius: 10px;
+      align-self: center;
+    }
+  }
+}
