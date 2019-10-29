@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700&display=swap');
+
+$pink: #E56399;
+$tumbleweed: #D3A588;
+$deep-taupe: #7A6563;
+$pearl-aqua: #7FD1B9;
+
+$light-pink: #f2d0d9; $dark-pink:#d96ca8; 
+$mid-pink:#d991ab; 
+$deep-purple: rgb(92, 51, 66);
+$dark-beige: #d9a79c;
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // font-family: 'Quicksand', sans-serif;
+  // font-family: 'Exo 2', sans-serif;
+  font-family: 'Montserrat Alternates', sans-serif;
 }

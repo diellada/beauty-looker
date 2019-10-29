@@ -9,7 +9,7 @@ export class ContainerComponent implements OnInit {
 
   searchBrand:string = "maybelline";
 
-  cardImage = "../../../assets/mirror.png";
+  // cardImage = "../../../assets/blush-brush.jfif";
   altText = "card image";
 
   url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.searchBrand}`;
