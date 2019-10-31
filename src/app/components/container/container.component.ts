@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 
 @Component({
   selector: 'app-container',
@@ -7,21 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
+  products: IBrandData[] = testFentyData;
+
   searchBrand:string = "maybelline";
 
-  // cardImage = "../../../assets/blush-brush.jfif";
   altText = "card image";
 
   url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.searchBrand}`;
-
-  // fetch(url)
-  // .then((response) => response.json()) 
-  // .then((data) => {  
-      
-  // })
-  // .catch((error) => {
-  //     throw new Error(error);
-  // });
 
   constructor() { }
 

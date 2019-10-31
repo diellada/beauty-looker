@@ -2,14 +2,67 @@ export interface IBrandData {
   brand: string,
   name: string,
   price: string,
-  poster: string,
-  productLink: string,
+  image_link: string,
+  product_link: string,
   category: string,
-  productType: string,
+  product_type: string,
   description: string
 }
 
-export const fentyProducts = 
+export const testFentyData: IBrandData[] = [
+  {
+    "brand": "fenty",
+    "name": "MATTEMOISELLE - Plush Matte Lipstick",
+    "price": "18.0",
+    "image_link": "https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_FENTY/default/dwc8c6d1b8/hi-res/FB40005_FB4014.jpg?sw=550 550w",
+    "product_link": "https://www.fentybeauty.com/mattemoiselle/plush-matte-lipstick/FB40005.html?dwvar_FB40005_color=FB4014",
+    "description": "An ultra slim lipstick with a longwearing, petal-soft matte finish, created in a rainbow of 14 weightless, color-intense shades each designed to flatter all skin tones.",
+    "category": "lipstick",
+    "product_type": "lipstick"
+  }, 
+  {
+    "brand": "fenty",
+    "name": "ECLIPSE - 2-in-1 Glitter Release Eyeliner",
+    "price": "20.0",
+    "image_link": "https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_FENTY/default/dw361a8ee8/hi-res/FB40002_FB4006.jpg?sw=550 550w",
+    "product_link": "https://www.fentybeauty.com/eclipse/2-in-1-glitter-release-eyeliner/FB40002.html?dwvar_FB40002_color=FB4006",
+    "description": "A limited-edition liquid eyeliner with a transforming metallic-to-glitter formula that lets you choose your own finish.",
+    "category": "liquid",
+    "product_type": "eyeliner"
+  }, 
+  {
+    "brand": "fenty",
+    "name": "COSMIC GLOSS - Lip Glitter",
+    "price": "19.0",
+    "image_link": "https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_FENTY/default/dwc6450206/hi-res/FB40001_FB4001.jpg?sw=550 550w",
+    "product_link": "https://www.fentybeauty.com/cosmic-gloss/lip-glitter/FB40001.html?dwvar_FB40001_color=FB4001",
+    "description": "A limited-edition glitter-packed lip gloss that delivers the ultimate triple-threat of creamy color, glitter, and shine.",
+    "category": "lip_gloss",
+    "product_type": "lipstick"
+  }, 
+  {
+    "brand": "fenty",
+    "name": "MATCH STIX - Matte Skinstick",
+    "price": "25.0",
+    "image_link": "https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_FENTY/default/dw50617083/hi-res/FB30003_FB3009.jpg?sw=550 550w",
+    "product_link": "https://www.fentybeauty.com/match-stix/matte-skinstick/FB30003.html?dwvar_FB30003_color=FB3009",
+    "description": "A magnetized makeup stick in a longwear, light-as-air matte formula to conceal, correct, contour, and touch up in 20 shades.",
+    "category": "concealer",
+    "product_type": "foundation"
+  }, 
+  {
+    "brand": "fenty",
+    "name": "PRO FILT'R - Soft Matte Longwear Foundation",
+    "price": "34.0",
+    "image_link": "https://www.fentybeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_FENTY/default/dw6a5f14c4/hi-res/FB30006_FB0320.jpg?sw=550 550w",
+    "product_link": "https://www.fentybeauty.com/pro-filtr/soft-matte-longwear-foundation/FB30006.html",
+    "description": "A soft matte, longwear foundation with buildable, medium to full coverage, in a boundary-breaking range of 40 shades.",
+    "category": null,
+    "product_type": "foundation"
+  }
+];
+
+const fentyProducts = 
 [
   {
       "id": 850,
