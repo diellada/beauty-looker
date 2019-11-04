@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContainerComponent } from './components/container/container.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { CardComponent } from './components/card/card.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     ContainerComponent,
     DropdownComponent,
-    CardComponent
+    CardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

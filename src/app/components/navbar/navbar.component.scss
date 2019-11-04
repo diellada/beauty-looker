@@ -25,23 +25,5 @@ header {
     align-content: center;
     width: 60%;
     position: relative; 
-
-    .searchArea {
-      fa-icon {
-        position: absolute;
-        top: 35%;
-        left: 18%;
-        z-index: 10;
-        color: $deep-purple;
-      }
-
-      input.search-bar {
-        height: 70%;
-        width: 70%;
-        border-radius: 10px;
-        align-self: center;
-        padding: 0 10%;
-      }
-    }
   }
 }

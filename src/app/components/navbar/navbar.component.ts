@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,7 +9,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   faMagic = faMagic;
-  faSearch = faSearch;
   constructor() { }
 
   ngOnInit() {

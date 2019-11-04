@@ -9,12 +9,7 @@ import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 export class ContainerComponent implements OnInit {
 
   products: IBrandData[] = testFentyData;
-
-  searchBrand:string = "maybelline";
-
   altText = "card image";
-
-  url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.searchBrand}`;
 
   constructor() { }
 
