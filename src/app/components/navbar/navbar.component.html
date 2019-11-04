@@ -1,7 +1,7 @@
 <header>
   <h2><fa-icon [icon]="faMagic"></fa-icon> beauty insider </h2>
   <div>
-    <app-search-bar></app-search-bar>
+    <app-search-bar (handleSearch)="handleSearch.emit($event)"></app-search-bar>
     <app-dropdown></app-dropdown>
   </div>
 </header>

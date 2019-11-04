@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -9,6 +9,7 @@ import { faMagic } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   faMagic = faMagic;
+  @Output() handleSearch = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,7 @@
 <div class="searchArea">
   <fa-icon [icon]="faSearch"></fa-icon>
-  <input type="text" class="search-bar" placeholder="search brands">
+  <input #search
+  (input)="handleSearch.emit(search.value)" 
+  type="text" class="search-bar" 
+  placeholder="search brands">
 </div>

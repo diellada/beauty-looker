@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { IBrandData } from 'src/assets/data/mockdata';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +8,10 @@ import { HttpClient } from "@angular/common/http";
 export class MakeupService {
 
   constructor(private httpClient: HttpClient) { }
-  searchBrand:string = "fenty";
-  url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${this.searchBrand}`;
-
-  getBrands(searchVal: string) {
+    
+  getBrands(searchBrand: string) {
     return this.httpClient
-    .get(this.url).toPromise().then(data => data).catch();
+    .get(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${searchBrand}`).toPromise().then(data => data) 
+    .catch();
   }
 }

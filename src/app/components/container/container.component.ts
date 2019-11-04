@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IBrandData, testFentyData } from "src/assets/data/mockdata";
+import { MakeupService } from 'src/app/services/makeup.service';
 
 @Component({
   selector: 'app-container',
@@ -7,13 +8,22 @@ import { IBrandData, testFentyData } from "src/assets/data/mockdata";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-
+  
+  @Input() search: string;
+  
   products: IBrandData[] = testFentyData;
+  filteredProducts: IBrandData[];
   altText = "card image";
 
-  constructor() { }
+  constructor(private makeupService: MakeupService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  searchProduct() {
+    console.log(this.search);
+
+    this.makeupService.getBrands(this.search).then((data) => {
+      console.log(data);
+    });
+  };
 }

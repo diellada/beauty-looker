@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'makeup-ng-app';
+  searchValue: string;
+
+  searchProduct(search: string) {
+    this.searchValue = search;
+  }
 }
