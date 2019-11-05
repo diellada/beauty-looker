@@ -1,15 +1,21 @@
 @import "../../../styles.scss";
 
-$searchbar-height: 40px;
-$searchbar-width: 250px;
+$searchbar-height: 80%;
+$searchbar-width: 120%;
 
 .searchArea {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-content: space-between;
+  position: relative;
 
   fa-icon {
     position: absolute;
-    top: calc(#{$searchbar-height}*0.3);
-    // left: 10.5%;
-    left: calc(#{$searchbar-width}*0.3);
+    top: calc(#{$searchbar-height}*0.45);
+    left: calc(#{$searchbar-width}*0.02);
     z-index: 10;
     color: $deep-purple;
   }
@@ -18,7 +24,7 @@ $searchbar-width: 250px;
     height: $searchbar-height;
     width: $searchbar-width;
     border-radius: 10px;
-    align-self: center;
-    padding: 0 10%;
+    justify-self: center;
+    padding: 0 calc(#{$searchbar-width}*0.1);
   }
 }
