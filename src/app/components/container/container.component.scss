@@ -1,8 +1,18 @@
+p {
+  width: 200px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
 .main-container {
   background-image: url(../../../assets/pink.jpg);
   background-size: contain;
   background-position: center;
   padding: 20px 10px;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
   justify-content: center;

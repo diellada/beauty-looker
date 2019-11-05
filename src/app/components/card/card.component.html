@@ -4,8 +4,7 @@
   <p>${{ product.price }}</p>
   <p>{{ product.brand }}</p>
   <fa-icon 
-  (mouseenter)="changeIcon()" 
-  (mouseleave)="changeIcon()" 
+  (click)="iconClicked()"
   [icon]="faHeart">
   </fa-icon>
 </div>
