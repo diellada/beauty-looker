@@ -11,5 +11,6 @@ export class AppComponent {
 
   searchProduct(search: string) {
     this.searchValue = search;
+    console.log(this.searchValue);
   }
 }

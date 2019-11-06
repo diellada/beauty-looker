@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 import { MakeupService } from 'src/app/services/makeup.service';
 
@@ -16,17 +16,21 @@ export class ContainerComponent implements OnInit {
   altText = "card image";
 
   constructor(private makeupService: MakeupService) { 
-    this.makeupService.getBrands("fenty").then((data: IBrandData[]) => {
+  }
+
+  ngOnInit() { }
+  
+    ngOnChanges(change: SimpleChanges){
+      console.log(change);
+      this.searchProducts(change.search.currentValue);
+    }
+
+  searchProducts(inputValue) {
+    this.makeupService.getBrands(String(inputValue)).then((data: IBrandData[]) => {
       console.log(data);
       this.products = data;
       this.filteredProducts = this.products;
     });
-  }
-
-  ngOnInit() { }
-
-  searchProducts() {
-    console.log(this.search);
   };
 
   addToFavourites(favProduct: IBrandData) {
