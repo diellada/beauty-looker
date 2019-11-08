@@ -1,6 +1,6 @@
 @import "../../../styles.scss";
 
-$searchbar-height: 80%;
+$searchbar-height: 100%;
 $searchbar-width: 120%;
 
 .searchArea {
@@ -14,7 +14,7 @@ $searchbar-width: 120%;
 
   fa-icon {
     position: absolute;
-    top: calc(#{$searchbar-height}*0.45);
+    top: calc(#{$searchbar-height}*0.35);
     left: calc(#{$searchbar-width}*0.05);
     z-index: 10;
     color: $deep-purple;
@@ -25,6 +25,6 @@ $searchbar-width: 120%;
     width: $searchbar-width;
     border-radius: 10px;
     justify-self: center;
-    padding: 0 calc(#{$searchbar-width}*0.15);
+    padding: 10px calc(#{$searchbar-width}*0.15);
   }
 }

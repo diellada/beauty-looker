@@ -10,6 +10,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     ContainerComponent,
     DropdownComponent,
     CardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,

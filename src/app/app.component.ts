@@ -9,8 +9,7 @@ export class AppComponent {
   title = 'makeup-ng-app';
   searchValue: string;
 
-  searchProduct(search: string) {
-    this.searchValue = search;
-    console.log(this.searchValue);
+  searchProduct(search: string): string {
+    return this.searchValue = search;
   }
 }

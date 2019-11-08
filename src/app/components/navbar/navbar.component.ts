@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 
 
 @Component({
@@ -8,8 +10,12 @@ import { faMagic } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  faMagic = faMagic;
+
   @Output() handleSearch = new EventEmitter();
+  @Output() showFavourites = new EventEmitter();
+  faMagic = faMagic;
+  faHeart = faHeart;
+
   constructor() { }
 
   ngOnInit() {

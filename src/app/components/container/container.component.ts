@@ -15,21 +15,18 @@ export class ContainerComponent implements OnInit {
   favouriteProducts: IBrandData[] = [];
   altText = "card image";
 
-  constructor(private makeupService: MakeupService) { 
-  }
+  constructor(private makeupService: MakeupService) { }
 
   ngOnInit() { }
   
-    ngOnChanges(change: SimpleChanges){
-      console.log(change);
-      this.searchProducts(change.search.currentValue);
-    }
+  ngOnChanges(change: SimpleChanges){
+    this.searchProducts(change.search.currentValue);
+  }
 
   searchProducts(inputValue) {
     this.makeupService.getBrands(String(inputValue)).then((data: IBrandData[]) => {
-      console.log(data);
       this.products = data;
-      this.filteredProducts = this.products;
+      return this.filteredProducts = this.products;
     });
   };
 
@@ -38,12 +35,12 @@ export class ContainerComponent implements OnInit {
   };
 
   removeFromFavourites(favProduct: IBrandData) {
-    this.favouriteProducts = this.favouriteProducts.filter(prod => {
+    this.favouriteProducts = this.favouriteProducts.filter((prod: IBrandData) => {
       return prod != favProduct;
     });
   };
 
-  filterFavourites() {
+  filterFavourites(): IBrandData[] {
     return this.filteredProducts = this.favouriteProducts;
   }
 }
