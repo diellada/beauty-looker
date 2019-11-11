@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faMagic } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-
 
 
 @Component({
@@ -12,13 +11,19 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
 
   @Output() handleSearch = new EventEmitter();
-  @Output() showFavourites = new EventEmitter();
+  // @Output() showFavourites = new EventEmitter();
   faMagic = faMagic;
   faHeart = faHeart;
+  search: string;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  // handleSearch(searchVal: string) {
+  //   this.search = searchVal;
+  //   this.searchbarService.receiveSearch(this.search);
+  // }
 
 }

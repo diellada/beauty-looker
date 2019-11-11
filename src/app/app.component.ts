@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchBarService } from 'src/app/services/search-bar.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,13 @@ export class AppComponent {
   title = 'makeup-ng-app';
   searchValue: string;
 
+  constructor(private searchbarService: SearchBarService) {}
+
   searchProduct(search: string): string {
     return this.searchValue = search;
+  }
+
+  passSearch() {
+    return this.searchbarService.receiveSearch(this.searchValue);
   }
 }

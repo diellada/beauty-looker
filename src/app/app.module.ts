@@ -11,6 +11,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     DropdownComponent,
     CardComponent,
     SearchBarComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

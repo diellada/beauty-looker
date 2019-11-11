@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 import { MakeupService } from 'src/app/services/makeup.service';
+import { SearchBarService } from 'src/app/services/search-bar.service';
 
 @Component({
   selector: 'app-container',
@@ -14,17 +15,34 @@ export class ContainerComponent implements OnInit {
   filteredProducts: IBrandData[];
   favouriteProducts: IBrandData[] = [];
   altText = "card image";
+  inputVal: string;
 
-  constructor(private makeupService: MakeupService) { }
+  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+  }
   
-  ngOnChanges(change: SimpleChanges){
-    this.searchProducts(change.search.currentValue);
+  // ngOnChanges(change: SimpleChanges){
+  //   this.searchProducts(change.search.currentValue);
+  // }
+
+  // searchProducts(inputValue) {
+  //   this.makeupService.getBrands(String(inputValue)).then((data: IBrandData[]) => {
+  //     this.products = data;
+  //     return this.filteredProducts = this.products;
+  //   });
+  // };
+
+  acceptSearch() {
+    return this.searchbarService.getSearch().subscribe((val) => {
+      this.inputVal = val;
+      console.log(val);
+      console.log("hi" + this.inputVal);
+    });
   }
 
-  searchProducts(inputValue) {
-    this.makeupService.getBrands(String(inputValue)).then((data: IBrandData[]) => {
+  searchProducts() {
+    this.makeupService.getBrands(this.inputVal).then((data: IBrandData[]) => {
       this.products = data;
       return this.filteredProducts = this.products;
     });
