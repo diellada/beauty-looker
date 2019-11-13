@@ -2,6 +2,7 @@ import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 import { MakeupService } from 'src/app/services/makeup.service';
 import { SearchBarService } from 'src/app/services/search-bar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-container',
@@ -17,7 +18,7 @@ export class ContainerComponent implements OnInit {
   altText = "card image";
   inputVal: string;
 
-  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService) { }
+  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService, private router: Router) { }
 
   ngOnInit() { 
   }
@@ -34,6 +35,8 @@ export class ContainerComponent implements OnInit {
   // };
 
   acceptSearch() {
+    this.router.navigateByUrl("/dynamic", {state: {searchStr: this.search}})
+    
     return this.searchbarService.getSearch().subscribe((val) => {
       this.inputVal = val;
       console.log(val);

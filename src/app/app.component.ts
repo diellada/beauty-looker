@@ -16,7 +16,7 @@ export class AppComponent {
     return this.searchValue = search;
   }
 
-  passSearch() {
+  passSearch(): void {
     return this.searchbarService.receiveSearch(this.searchValue);
   }
 }
