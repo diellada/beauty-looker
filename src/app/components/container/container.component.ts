@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  
+
   @Input() search: string;
   products: IBrandData[]
   filteredProducts: IBrandData[];
@@ -20,9 +20,9 @@ export class ContainerComponent implements OnInit {
 
   constructor(private makeupService: MakeupService, private searchbarService: SearchBarService, private router: Router) { }
 
-  ngOnInit() { 
+  ngOnInit() {
   }
-  
+
   // ngOnChanges(change: SimpleChanges){
   //   this.searchProducts(change.search.currentValue);
   // }
@@ -35,8 +35,7 @@ export class ContainerComponent implements OnInit {
   // };
 
   acceptSearch() {
-    this.router.navigateByUrl("/dynamic", {state: {searchStr: this.search}})
-    
+    this.router.navigateByUrl("/dynamic", {state: {searchStr: this.search}});
     return this.searchbarService.getSearch().subscribe((val) => {
       this.inputVal = val;
       console.log(val);
@@ -49,17 +48,17 @@ export class ContainerComponent implements OnInit {
       this.products = data;
       return this.filteredProducts = this.products;
     });
-  };
+  }
 
   addToFavourites(favProduct: IBrandData) {
     return this.favouriteProducts.push(favProduct);
-  };
+  }
 
   removeFromFavourites(favProduct: IBrandData) {
     this.favouriteProducts = this.favouriteProducts.filter((prod: IBrandData) => {
       return prod != favProduct;
     });
-  };
+  }
 
   filterFavourites(): IBrandData[] {
     return this.filteredProducts = this.favouriteProducts;

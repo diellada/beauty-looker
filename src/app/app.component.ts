@@ -12,11 +12,11 @@ export class AppComponent {
 
   constructor(private searchbarService: SearchBarService) {}
 
-  searchProduct(search: string): string {
-    return this.searchValue = search;
-  }
+  // searchProduct(search: string): string {
+  //   return this.searchValue = search;
+  // }
 
-  passSearch(): void {
-    return this.searchbarService.receiveSearch(this.searchValue);
-  }
+  // passSearch(): void {
+  //   return this.searchbarService.receiveSearch(this.searchValue);
+  // }
 }

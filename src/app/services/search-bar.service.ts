@@ -6,17 +6,17 @@ import { Subject } from 'rxjs';
 })
 export class SearchBarService {
 
-  private search: Subject<string> = new Subject<string>();
+  // private search: Subject<string> = new Subject<string>();
 
   constructor() { }
 
   receiveSearch(val: string) {
     console.log(val + "here first");
-    return this.search.next(val);
+    // return this.search.next(val);
   }
 
   getSearch() {
     console.log("here");
-    return this.search.asObservable();
+    // return this.search.asObservable();
   }
 }

@@ -1,8 +1,8 @@
 <section class="main-container">
-  <app-card *ngFor="let product of filteredProducts" 
-  [product]="product" 
-  (addFavourite)="addToFavourites($event)" 
+  <app-card *ngFor="let product of filteredProducts"
+  [product]="product"
+  (addFavourite)="addToFavourites($event)"
   (removeFavourite)="removeFromFavourites($event)">
   </app-card>
-  <p (click)="filterFavourites()">Favourites! </p>
+  <p (click)="filterFavourites()" [routerLink]="['/favourites']">Favourites! </p>
 </section>

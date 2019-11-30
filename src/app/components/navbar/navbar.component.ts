@@ -10,7 +10,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() handleSearch = new EventEmitter();
+  // @Output() handleSearch = new EventEmitter();
   // @Output() showFavourites = new EventEmitter();
   faMagic = faMagic;
   faHeart = faHeart;
