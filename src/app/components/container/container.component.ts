@@ -3,6 +3,7 @@ import { IBrandData, testFentyData } from "src/assets/data/mockdata";
 import { MakeupService } from 'src/app/services/makeup.service';
 import { SearchBarService } from 'src/app/services/search-bar.service';
 import { Router } from '@angular/router';
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-container',
@@ -16,37 +17,32 @@ export class ContainerComponent implements OnInit {
   filteredProducts: IBrandData[];
   favouriteProducts: IBrandData[] = [];
   altText = "card image";
-  inputVal: string;
+  inputVal: string = "nyx";
+  subscriptions: Subscription[] = [];
 
-  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService, private router: Router) { }
+  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService, private router: Router) {
+   }
 
   ngOnInit() {
-  }
-
-  // ngOnChanges(change: SimpleChanges){
-  //   this.searchProducts(change.search.currentValue);
-  // }
-
-  // searchProducts(inputValue) {
-  //   this.makeupService.getBrands(String(inputValue)).then((data: IBrandData[]) => {
-  //     this.products = data;
-  //     return this.filteredProducts = this.products;
-  //   });
-  // };
-
-  acceptSearch() {
-    this.router.navigateByUrl("/dynamic", {state: {searchStr: this.search}});
-    return this.searchbarService.getSearch().subscribe((val) => {
+    this.subscriptions.push(
+    this.searchbarService.search.subscribe((val) => {
       this.inputVal = val;
-      console.log(val);
-      console.log("hi" + this.inputVal);
+      console.log(this.inputVal);
+      this.makeupService.getBrands(val);
+      this.updateDisplayedProducts(val);
+    }));
+
+    this.makeupService.getBrands(this.inputVal).then((data: IBrandData[]) => {
+      this.products = data;
+      console.log(this.inputVal);
+      return this.filteredProducts = this.products;
     });
   }
 
-  searchProducts() {
-    this.makeupService.getBrands(this.inputVal).then((data: IBrandData[]) => {
-      this.products = data;
-      return this.filteredProducts = this.products;
+  updateDisplayedProducts(inputVal: string) {
+    this.makeupService.getBrands(inputVal).then((data: IBrandData[]) => {
+      console.log(inputVal);
+      return this.filteredProducts = data;
     });
   }
 

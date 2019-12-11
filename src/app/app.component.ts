@@ -12,8 +12,9 @@ export class AppComponent {
 
   constructor(private searchbarService: SearchBarService) {}
 
-  // searchProduct(search: string): string {
-  //   return this.searchValue = search;
+  // searchProduct(search: string): void {
+  //   // return this.searchValue = search;
+  //   this.searchbarService.receiveSearch(search);
   // }
 
   // passSearch(): void {
