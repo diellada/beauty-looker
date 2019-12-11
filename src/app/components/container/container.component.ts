@@ -4,6 +4,7 @@ import { MakeupService } from 'src/app/services/makeup.service';
 import { SearchBarService } from 'src/app/services/search-bar.service';
 import { Router } from '@angular/router';
 import { Subscription } from "rxjs";
+import { FavouritesService } from 'src/app/services/favourites.service';
 
 @Component({
   selector: 'app-container',
@@ -20,7 +21,10 @@ export class ContainerComponent implements OnInit {
   inputVal: string = "nyx";
   subscriptions: Subscription[] = [];
 
-  constructor(private makeupService: MakeupService, private searchbarService: SearchBarService, private router: Router) {
+  constructor(private makeupService: MakeupService,
+              private searchbarService: SearchBarService,
+              private router: Router,
+              private favouriteService: FavouritesService) {
    }
 
   ngOnInit() {
@@ -47,13 +51,14 @@ export class ContainerComponent implements OnInit {
   }
 
   addToFavourites(favProduct: IBrandData) {
-    return this.favouriteProducts.push(favProduct);
+    this.favouriteProducts = this.favouriteService.addToFavourites(favProduct);
   }
 
   removeFromFavourites(favProduct: IBrandData) {
-    this.favouriteProducts = this.favouriteProducts.filter((prod: IBrandData) => {
-      return prod != favProduct;
-    });
+    this.favouriteProducts = this.favouriteService.removeFromFavourites(favProduct);
+    // this.favouriteProducts = this.favouriteProducts.filter((prod: IBrandData) => {
+    //   return prod !== favProduct;
+    // });
   }
 
   filterFavourites(): IBrandData[] {

@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
-$searchbar-height: 100%;
-$searchbar-width: 120%;
+$searchbar-height: 40px;
+$searchbar-width: 250px;
 
 .searchArea {
   height: 100%;
@@ -23,8 +23,8 @@ $searchbar-width: 120%;
   input.search-bar {
     height: $searchbar-height;
     width: $searchbar-width;
-    border-radius: 10px;
+    border-radius: $base-spacing;
     justify-self: center;
-    padding: 10px calc(#{$searchbar-width}*0.15);
+    padding: $base-spacing calc(#{$searchbar-width}*0.15);
   }
 }
