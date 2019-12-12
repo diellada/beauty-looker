@@ -1,1 +1,11 @@
-<select name="" id=""></select>
+<!-- <div class="custom-select"> -->
+  <!-- <select (click)="getProductTags()">
+    <option class="options" *ngFor="let tag of tagList">{{ tag }}</option>
+  </select> -->
+<!-- </div> -->
+
+<div class="selector">
+  <ul (click)="getProductTags()"> x
+    <li class="options" *ngFor="let tag of tagList">{{ tag }}</li>
+  </ul>
+</div>

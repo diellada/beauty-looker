@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { IBrandData, testFentyData } from "src/assets/data/mockdata";
+import { IBrandData } from "src/assets/data/mockdata";
 import { MakeupService } from 'src/app/services/makeup.service';
 import { SearchBarService } from 'src/app/services/search-bar.service';
 import { Router } from '@angular/router';
@@ -31,34 +31,28 @@ export class ContainerComponent implements OnInit {
     this.subscriptions.push(
     this.searchbarService.search.subscribe((val) => {
       this.inputVal = val;
-      console.log(this.inputVal);
       this.makeupService.getBrands(val);
       this.updateDisplayedProducts(val);
     }));
 
     this.makeupService.getBrands(this.inputVal).then((data: IBrandData[]) => {
       this.products = data;
-      console.log(this.inputVal);
       return this.filteredProducts = this.products;
     });
   }
 
   updateDisplayedProducts(inputVal: string) {
     this.makeupService.getBrands(inputVal).then((data: IBrandData[]) => {
-      console.log(inputVal);
       return this.filteredProducts = data;
     });
   }
 
-  addToFavourites(favProduct: IBrandData) {
+  addFavourite(favProduct: IBrandData) {
     this.favouriteProducts = this.favouriteService.addToFavourites(favProduct);
   }
 
-  removeFromFavourites(favProduct: IBrandData) {
+  removeFavourite(favProduct: IBrandData) {
     this.favouriteProducts = this.favouriteService.removeFromFavourites(favProduct);
-    // this.favouriteProducts = this.favouriteProducts.filter((prod: IBrandData) => {
-    //   return prod !== favProduct;
-    // });
   }
 
   filterFavourites(): IBrandData[] {

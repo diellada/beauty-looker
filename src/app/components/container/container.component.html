@@ -1,7 +1,7 @@
 <section class="main-container">
   <app-card *ngFor="let product of filteredProducts"
   [product]="product"
-  (addFavourite)="addToFavourites($event)"
-  (removeFavourite)="removeFromFavourites($event)">
+  (addFavourite)="addFavourite($event)"
+  (removeFavourite)="removeFavourite($event)">
   </app-card>
 </section>

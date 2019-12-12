@@ -8,7 +8,7 @@ export class FavouritesService {
 
   constructor() { }
 
-  favouriteProducts: IBrandData[];
+  favouriteProducts: IBrandData[] = [];
 
   addToFavourites(favProduct: IBrandData): IBrandData[] {
     this.favouriteProducts.push(favProduct);

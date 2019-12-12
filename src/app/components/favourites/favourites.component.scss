@@ -6,4 +6,9 @@
   background-size: cover;
   opacity: 0.5;
   min-height: 86vh;
+  padding: 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  grid-gap: 30px;
 }
