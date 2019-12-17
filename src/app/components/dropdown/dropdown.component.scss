@@ -1,42 +1,47 @@
 @import "../../../styles.scss";
 
-// select {
-//   margin: $base-spacing;
-//   padding: $base-spacing/2;
-//   width: 100px;
-//   height: $searchbar-height;
-//   align-self: left;
-//   border-radius: $base-spacing;
-
-//   option {
-//     width: 100px;
-//     border-radius: $base-spacing;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
-// }
-
 .selector {
+  position: relative;
+  background-color: white;
+  margin: $base-spacing;
+  padding: $base-spacing/2;
+  width: 100px;
+  height: $searchbar-height;
+  align-self: left;
+  border-radius: $base-spacing;
+  text-align: right;
+  z-index: 4;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   ul {
-    background-color: white;
-    margin: $base-spacing;
-    padding: $base-spacing/2;
-    width: 100px;
-    height: $searchbar-height;
-    align-self: left;
+    position: absolute;
+    top: $searchbar-height;
+    left: 0;
+    width: 100%;
+    background-color: inherit;
     border-radius: $base-spacing;
-    position: relative;
-    text-align: right;
+    font-size: 14px;
 
     li {
-      position: absolute;
-      top: $searchbar-height;
-      width: 100%;
-      border-radius: $base-spacing;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: 100%;
+      padding: 0 $base-spacing/2;
+
+      &:hover {
+        background-color: rgba($color: $pearl-aqua, $alpha: 0.5) ;
+      }
     }
   }
 }

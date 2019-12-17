@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MakeupService } from "src/app/services/makeup.service";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-dropdown',
@@ -8,8 +9,10 @@ import { MakeupService } from "src/app/services/makeup.service";
 })
 export class DropdownComponent implements OnInit {
 
+  faChevronDown = faChevronDown;
   searchTag: string = "vegan";
-
+  isOpen: boolean = false;
+  tagClicked: string = "";
   tagList: string[] = ["Canadian", "CertClean", "Chemical Free", "Dairy Free",
     "EWG Verified", "EcoCert", "Fair Trade", "Gluten Free", "Hypoallergenic", "Natural",
     "No Talc", "Non-GMO", "Organic", "Peanut Free Product", "Sugar Free", "USDA Organic",
@@ -24,5 +27,6 @@ export class DropdownComponent implements OnInit {
     this.makeupService.getTags(this.searchTag).then(tags => {
       console.log(tags);
     });
+    this.isOpen === true ? this.isOpen = false : this.isOpen = true;
   }
 }

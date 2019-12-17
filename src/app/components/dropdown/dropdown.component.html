@@ -1,11 +1,6 @@
-<!-- <div class="custom-select"> -->
-  <!-- <select (click)="getProductTags()">
-    <option class="options" *ngFor="let tag of tagList">{{ tag }}</option>
-  </select> -->
-<!-- </div> -->
-
-<div class="selector">
-  <ul (click)="getProductTags()"> x
-    <li class="options" *ngFor="let tag of tagList">{{ tag }}</li>
+<div class="selector" (click)="getProductTags()">
+  <p> {{ tagClicked }} <fa-icon [icon]="faChevronDown"></fa-icon> </p>
+  <ul *ngIf="isOpen">
+    <li class="options" *ngFor="let tag of tagList" (click)="tagClicked = tag">{{ tag }}</li>
   </ul>
 </div>
