@@ -1,5 +1,5 @@
 <div class="selector" (click)="getProductTags()">
-  <p> {{ tagClicked }} <fa-icon [icon]="faChevronDown"></fa-icon> </p>
+  <p> {{ tagClicked }} </p><fa-icon [icon]="faChevronDown"></fa-icon>
   <ul *ngIf="isOpen">
     <li class="options" *ngFor="let tag of tagList" (click)="tagClicked = tag">{{ tag }}</li>
   </ul>

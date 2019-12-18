@@ -17,7 +17,7 @@
 
   p {
     display: flex;
-    justify-content: space-between;
+    justify-self: flex-start;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
